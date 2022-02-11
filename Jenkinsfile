@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             when {
                 expression {
-                   ${BRANCH_NAME} == 'main' 
+                   JOB_NAME == 'jenkinsfile-testing' 
                 }
             }
             steps {
