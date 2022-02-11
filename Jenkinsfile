@@ -27,7 +27,7 @@ pipeline {
             }
             steps {
                 echo 'Building'
-                echo "branch: ${BRANCH_NAME}"
+                echo "branch: ${env.JOB_NAME}"
                 script {
                     gv.buildApp()
                 }
