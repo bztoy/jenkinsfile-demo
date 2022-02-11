@@ -20,21 +20,17 @@ pipeline {
             }
         }
         stage('Build') {
-            steps {
-                echo 'Building'
-                echo "branch: ${BRANCH_NAME}"
-                script {
-                    gv.buildApp()
-                }
-            }
             when {
                 expression {
                    BRANCH_NAME == 'main' 
                 }
             }
             steps {
-                echo "Build on main branch version ${NEW_VERSION}"
-                echo "It has been changed to verison ${params.VERSION}"
+                echo 'Building'
+                echo "branch: ${BRANCH_NAME}"
+                script {
+                    gv.buildApp()
+                }
             }
         }
         stage('Test') {
