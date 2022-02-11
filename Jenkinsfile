@@ -34,6 +34,12 @@ pipeline {
             }
         }
         stage('Test') {
+            // Execute test script if this param is true
+            when {
+                expression {
+                    params.executeTest == true
+                }
+            }
             steps {
                 script {
                     gv.testApp()
