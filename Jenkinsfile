@@ -5,7 +5,7 @@ pipeline {
     agent any
     environment {
         NEW_VERSION = '1.3.4'
-        SERVER_CREDENTIALS = credentials('aws-web-server')
+        // SERVER_CREDENTIALS = credentials('aws-web-server')
     }
     parameters {
         choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: 'version to deploy')
